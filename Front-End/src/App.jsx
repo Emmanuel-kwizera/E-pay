@@ -7,6 +7,7 @@ import Home from "./views/Home";
 import Buy from "./views/Buy";
 import NotFound from "./views/NotFound";
 import Balance from "./views/Balance";
+import './App.css'
 
 const App = () => {
   return (
