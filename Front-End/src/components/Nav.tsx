@@ -12,16 +12,16 @@ const Nav = () => {
     { text: "Balance", to: "/balance" },
   ];
 
-  const activeClass = "text-white bg-gray-900";
-  const inactiveClass = "text-gray-300 hover:text-white hover:bg-gray-700";
+  const activeClass = "text-white";
+  const inactiveClass = "text-gray-300 hover:text-white";
 
   return (
-    <nav className="bg-gray-800">
+    <nav className="bg-[#65000b]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h3 className="text-white">T-seller</h3>
+              <h3 className="text-white">E-pay</h3>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
@@ -42,11 +42,11 @@ const Nav = () => {
             </div>
           </div>
 
-          <div className="-mr-2 flex md:hidden">
+          <div className="flex md:hidden">
             {/* Mobile menu button */}
             <button
               onClick={() => setShowMenu(!showMenu)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:text-white"
             >
               {/* Menu open: "hidden", Menu closed: "block" */}
               <svg
@@ -117,19 +117,19 @@ const Nav = () => {
           <div className="mt-3 px-2 space-y-1">
             <a
               href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white"
             >
               Your Profile
             </a>
             <a
               href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white"
             >
               Settings
             </a>
             <a
               href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white"
             >
               Sign out
             </a>
