@@ -1,4 +1,4 @@
-# Token seller
+# Electricity Pay
 
 Inspired by [posva's](https://github.com/posva) [vite-tailwind-starter](https://github.com/posva/vite-tailwind-starter)
 
