@@ -1,0 +1,68 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Users\kwize\AppData\Local\Microsoft\WindowsApps;;C:\Users\kwize\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\kwize\AppData\Local\Yarn\bin;C:\Users\kwize\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  16.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\kwize\AppData\Local\Yarn\Cache\v6\npm-@ampproject-remapping-2.1.2-4edca94973ded9630d20101cd8559cedb8d8bd34-integrity\node_modules\@ampproject\remapping\dist\types\build-source-map-tree.d.ts' -> 'C:\Users\kwize\Music\D O\Cat1-Term2\Front-end\node_modules\@ampproject\remapping\dist\types\build-source-map-tree.d.ts'
+
+npm manifest: 
+  {
+    "name": "cra-tailwind-template",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@craco/craco": "^6.1.0",
+      "@tailwindcss/postcss7-compat": "^2.0.2",
+      "@testing-library/jest-dom": "^5.11.9",
+      "@testing-library/react": "^11.2.5",
+      "@testing-library/user-event": "^12.6.3",
+      "autoprefixer": "^9.8.6",
+      "postcss": "^7.0.35",
+      "react": "^17.0.1",
+      "react-dom": "^17.0.1",
+      "react-scripts": "4.0.1",
+      "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+      "web-vitals": "^0.2.4"
+    },
+    "scripts": {
+      "start": "craco start",
+      "build": "craco build",
+      "test": "craco test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
