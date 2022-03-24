@@ -3,9 +3,9 @@ version: '3.8'
 services:
   backend:
     image: kwizera05/backend:latest
-    build: Server
-      # context: Server
-      # dockerfile: Dockerfile
+    build:
+      context: Server
+      dockerfile: Dockerfile
     ports:
       - '8000:8000'
   frontend:
@@ -20,14 +20,14 @@ services:
     build: ./
     ports:
       - 27017:27017
-  nginx:
-    build: nginx
-      # context: nginx
-      # dockerfile: Dockerfile 
-    image: kwizera05/devops-exam-nginx:latest
-    mem_limit: 128m
-    hostname: nginx
-    ports:
-      - "80:80"
+  # nginx:
+  #   build:
+  #     context: nginx
+  #     dockerfile: Dockerfile 
+  #   image: kwizera05/devops-exam-nginx:latest
+  #   mem_limit: 128m
+  #   hostname: nginx
+  #   ports:
+  #     - "80:80"
 volumes:
   db:
