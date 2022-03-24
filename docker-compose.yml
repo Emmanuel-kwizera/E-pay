@@ -10,9 +10,9 @@ services:
       - '8000:8000'
   frontend:
     image: kwizera05/frontend:latest 
-    build: Front-End
-      # context: Front-End
-      # dockerfile: Dockerfile
+    build: 
+      context: Front-End
+      dockerfile: Dockerfile
     ports:
       - '80:3000'
   db:
@@ -20,11 +20,14 @@ services:
     build: ./
     ports:
       - 27017:27017
-  # nginx:
-  #   image: kwizera05/nginx
-  #   mem_limit: 128m
-  #   hostname: nginx
-  #   ports:
-  #     - "80:80"
+  nginx:
+    build: 
+      context: nginx
+      dockerfile: Dockerfile 
+    image: "kwizera05/devops-exam-nginx"
+    mem_limit: 128m
+    hostname: nginx
+    ports:
+      - "80:80"
 volumes:
   db:
