@@ -25,7 +25,8 @@ exports.create = (req, res) => {
   // Save Meter in the database
   Meter.create({
     code: generateMeterNumber(),
-    owner: req.body.owner,
+    owner_first_name: req.body.owner_first_name,
+    owner_last_name: req.body.owner_last_name,
   })
     .then((data) => {
       res.status(201).send(data);
@@ -94,7 +95,7 @@ exports.loadToken = async (req, res) => {
         res.send({
           message: `${added} days added, now you have ${
             daysBefore + added
-          } days remanining`,
+          } days remaining`,
         });
       }
     })
@@ -179,7 +180,7 @@ exports.delete = (req, res) => {
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot delete Meter with id=${id}. Maybe Meter was not found!`,
+          message: "Could not delete Meter with number=" + number
         });
       } else {
         res.send({

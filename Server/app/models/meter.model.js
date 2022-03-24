@@ -3,7 +3,8 @@ const Joi = require('joi')
 var schema = mongoose.Schema(
   {
     code: String,
-    owner: String,
+    owner_first_name: String,
+    owner_last_name: String,
     power_expiration_time: Date
   },
   { timestamps: true }
@@ -20,7 +21,8 @@ const Model = mongoose.model("meter", schema);
 module.exports.Meter = Model;
 module.exports.validateMeter = (body) => {
   return Joi.object({
-    owner: Joi.string().required(),
+    owner_first_name: Joi.string().required(),
+    owner_last_name: Joi.string().required(),
   }).validate(body);
 };
 module.exports.validateLoadToken = (body) => {
@@ -28,4 +30,4 @@ module.exports.validateLoadToken = (body) => {
       token: Joi.string().required(),
       meter_number: Joi.string().min(6).required()
     }).validate(body);
-};
+  };

@@ -16,7 +16,7 @@ exports.create = async (req, res) => {
       .status(400)
       .send({ message: "total amount should be a multiple of 100" });
 
-  const meter = await Meter.findOne({ token_code: req.body.meter_number });
+  const meter = await Meter.findOne({ code: req.body.meter_number });
 
   if (!meter)
     return res.status(404).send({
@@ -25,7 +25,7 @@ exports.create = async (req, res) => {
 
   // Save Token in the database
   Token.create({
-    token_code: uuidv4(), // new uuid
+    code: uuidv4(), // new uuid
     meter_number: req.body.meter_number,
     total_amount: req.body.total_amount,
     status: "unused",
@@ -40,21 +40,21 @@ exports.create = async (req, res) => {
     });
 };
 
-// Find a single Token by token_code
+// Find a single Token by code
 exports.findOne = (req, res) => {
-  const token_code = req.params.token_code;
+  const code = req.params.code;
 
-  Token.findOne({ token_code })
+  Token.findOne({ code })
     .then((data) => {
       if (!data)
         res.status(404).send({
-          message: "Not found Token with token_code " + token_code,
+          message: "Not found Token with code " + code,
         });
       else res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Error retrieving Token with token_code=" + token_code,
+        message: "Error retrieving Token with code=" + code,
       });
     });
 };
