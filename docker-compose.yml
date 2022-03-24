@@ -14,20 +14,20 @@ services:
       context: Front-End
       dockerfile: Dockerfile
     ports:
-      - '80:80'
+      - '3000:3000'
   db:
     image: kwizera05/e-paydb:latest
     build: ./
     ports:
       - 27017:27017
-  # nginx:
-  #   build:
-  #     context: nginx
-  #     dockerfile: Dockerfile 
-  #   image: kwizera05/devops-exam-nginx:latest
-  #   mem_limit: 128m
-  #   hostname: nginx
-  #   ports:
-  #     - "80:80"
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile 
+    image: kwizera05/devops-exam-nginx:latest
+    mem_limit: 128m
+    hostname: nginx
+    ports:
+      - "80:80"
 volumes:
   db:
