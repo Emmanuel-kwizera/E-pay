@@ -34,6 +34,7 @@ db.mongoose
 
 
 app.get("/", (req, res) => {
+    console.log("done")
     res.json({ message: "Welcome to E-pay." });
 });
 
