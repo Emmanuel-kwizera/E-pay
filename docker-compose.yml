@@ -21,10 +21,10 @@ services:
     ports:
       - 27017:27017
   nginx:
-    build: 
-      context: nginx
-      dockerfile: Dockerfile 
-    image: "kwizera05/devops-exam-nginx"
+    build: nginx
+      # context: nginx
+      # dockerfile: Dockerfile 
+    image: kwizera05/devops-exam-nginx:latest
     mem_limit: 128m
     hostname: nginx
     ports:
