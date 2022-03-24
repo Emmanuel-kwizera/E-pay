@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    image: kwizera05/backend:latest
+    build:
+      context: Server
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'
+  frontend:
+    image: kwizera05/frontend:latest 
+    build: 
+      context: Front-End
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+  db:
+    image: kwizera05/e-paydb:latest
+    build: ./
+    ports:
+      - 27017:27017
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile 
+    image: kwizera05/devops-exam-nginx:latest
+    mem_limit: 128m
+    hostname: nginx
+    ports:
+      - "80:80"
+volumes:
+  db:

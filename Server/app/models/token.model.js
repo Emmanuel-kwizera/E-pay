@@ -2,11 +2,9 @@ const mongoose = require("mongoose");
 const Joi = require("joi");
 var schema = mongoose.Schema(
   {
-    token_code: String,
+    code: String,
     meter_number: { type: String, ref: "meter" },
-    amount
-: Number,
-    endDate: Date,
+    total_amount: Number,
     status: {
       type: String,
       enum: ["unused", "used"],
@@ -26,8 +24,7 @@ const Model = mongoose.model("token", schema);
 module.exports.Token = Model;
 module.exports.validateTokenPayload = (body) => {
   return Joi.object({
-    amount
-: Joi.number().min(100).max(182500).required(),
+    total_amount: Joi.number().min(100).max(182500).required(),
     meter_number: Joi.string().min(6).required(),
   }).validate(body);
 };
